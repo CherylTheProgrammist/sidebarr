@@ -1,0 +1,56 @@
+* {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.nav {
+    background-color: aqua;
+}
+.back {
+    width: 40px;
+    height: 40px;
+}
+.menu {
+    background-color: darkblue;
+}
+.bar {
+    height: 5px;
+    width: 35px;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.x1 {
+    transform: rotate(45deg);
+    width: 35px;
+}
+.x2{
+    transform: rotate(-45deg);
+}
+.back:hover + .back1 {
+    display: block;
+    color: white;
+    width: 35px;
+}
+.back:hover {
+    display: none
+}
+.Names a:hover {
+    background-color: #eee;
+    color: black;
+  }
+.Names{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+
+}
+.button :hover{
+    display: block;
+}
