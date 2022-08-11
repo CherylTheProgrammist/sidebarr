@@ -139,3 +139,7 @@ input:checked + .back > div:nth-child(2){
     transform: translateX(100px);
     transition: 300ms;
 }
+.name3:hover {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
