@@ -27,12 +27,14 @@
     height: 5px;
     width: 35px;
     background-color: white;
-}.bar2 {
+}
+.bar2 {
     transition: 0.5s;
     height: 5px;
     width: 35px;
     background-color: white;
-}.bar3 {
+}
+.bar3 {
     transition: 0.5s;
     transform-origin: 10% 80%;
     height: 5px;
@@ -64,22 +66,27 @@
     flex-direction: column;
     gap: 30px;
     font-size: 30px;
-    opacity: 0;
     outline: none;
     color: white;
-
 }
 .name1 {
     cursor: pointer;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
 }
 .name2 {
     cursor: pointer;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
 }
 .name3 {
     cursor: pointer;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
 }
-
-
 .back:hover + .Names{
     transform: translate(20%);
     transition: 0.4s;
@@ -98,11 +105,25 @@ input {
     margin-left: 10px;
     opacity: 0;
 }
-input:checked + .back  + .Names {
+input:checked + .back  + .Names > .name1 {
     transform: translate(20%);
     transition: 0.4s;
     opacity: 1;
+    transition-delay: 0s;
 }
+input:checked + .back  + .Names > .name2 {
+    transform: translate(20%);
+    transition: 0.4s;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+input:checked + .back  + .Names > .name3 {
+    transform: translate(20%);
+    transition: 0.4s;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
 input:checked + .back > div:nth-child(1){
     transform: rotate(45deg);
     transition: 0.4s;
@@ -120,26 +141,24 @@ input:checked + .back > div:nth-child(2){
 .name1:hover {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    padding: 6px;
 }
 .name2:hover {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    padding: 6px;
 }
 .name3:hover {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    padding: 6px;
 }
 .Names{
     transition: 300ms;
-    opacity: 0;
     color: white;
 }
 .checkbox:chechked ~ .Names{
     opacity: 1;
     transform: translateX(100px);
     transition: 300ms;
-}
-.name3:hover {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
 }
