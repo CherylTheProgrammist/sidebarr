@@ -1,56 +1,141 @@
 * {
-    height: 100%;
-    width: 100%;
     padding: 0;
     margin: 0;
 }
 .container {
+    width: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: 20% 80%;
 }
-.nav {
-    background-color: aqua;
-}
 .back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px   ;
+    margin-top: 10px;
+    margin-left: 10px;
     width: 40px;
     height: 40px;
+    z-index: 1;
+    position: relative;
 }
-.menu {
-    background-color: darkblue;
-}
-.bar {
+.bar1 {
+    transform-origin: 10%;
+    transition: 0.5s;
     height: 5px;
     width: 35px;
     background-color: white;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-.x1 {
-    transform: rotate(45deg);
+}.bar2 {
+    transition: 0.5s;
+    height: 5px;
     width: 35px;
+    background-color: white;
+}.bar3 {
+    transition: 0.5s;
+    transform-origin: 10% 80%;
+    height: 5px;
+    width: 35px;
+    background-color: white;
 }
-.x2{
+.back:hover > .bar1 {
+    width: 45px;
+   transform: rotate(45deg);
+}
+.back:hover > .bar2 {
+    width: 0px;
+    height: 0px;
+}
+.back:hover > .bar3 {
+    width: 45px;
     transform: rotate(-45deg);
 }
-.back:hover + .back1 {
-    display: block;
-    color: white;
-    width: 35px;
+.sidebar {
+    background-color: brown;
+    position: relative;
 }
-.back:hover {
-    display: none
+.menu {
+    background-color:indianred;
 }
-.Names a:hover {
-    background-color: #eee;
-    color: black;
-  }
 .Names{
+    width: 200px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     font-size: 30px;
+    opacity: 0;
+    outline: none;
+    color: white;
 
 }
-.button :hover{
-    display: block;
+.name1 {
+    cursor: pointer;
+}
+.name2 {
+    cursor: pointer;
+}
+.name3 {
+    cursor: pointer;
+}
+
+
+.back:hover + .Names{
+    transform: translate(20%);
+    transition: 0.4s;
+    opacity: 1;
+}
+.Names a{
+    text-decoration: none;
+    color: aliceblue;
+}
+input {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 10px;
+    margin-left: 10px;
+    opacity: 0;
+}
+input:checked + .back  + .Names {
+    transform: translate(20%);
+    transition: 0.4s;
+    opacity: 1;
+}
+input:checked + .back > div:nth-child(1){
+    transform: rotate(45deg);
+    transition: 0.4s;
+    opacity: 1;
+}
+input:checked + .back > div:nth-child(3){
+    transform: rotate(-45deg);
+    transition: 0.4s;
+    opacity: 1;
+    margin-top: 4px;
+}
+input:checked + .back > div:nth-child(2){
+    display: none;
+}
+.name1:hover {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.name2:hover {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.name3:hover {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.Names{
+    transition: 300ms;
+    opacity: 0;
+    color: white;
+}
+.checkbox:chechked ~ .Names{
+    opacity: 1;
+    transform: translateX(100px);
+    transition: 300ms;
 }
